@@ -85,6 +85,7 @@ big {
 /*--------------------------------------------------------------
 Layout
 --------------------------------------------------------------*/
+
 body {
     margin: 0;
     padding: 0;
@@ -132,6 +133,19 @@ body {
 #origin-text p {
     margin: 0;
     padding-bottom: 1em;
+}
+
+#alertText {
+    padding: 3px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #E95D0F;
+    border: 3px solid #E95D0F;
+}
+
+.hideAlert {
+    height: 0;
+    overflow: hidden;
 }
 
 .test-wrapper {

@@ -3,6 +3,7 @@ const testArea = document.querySelector("#test-area");
 const originText = document.querySelector("#origin-text p").innerHTML;
 const resetButton = document.querySelector("#reset");
 const theTimer = document.querySelector(".timer");
+const hideAlert = document.querySelector(".hideAlert");
 
 //Global variables
 let timer = [0,0,0,0];
@@ -66,9 +67,28 @@ function resetTimer(){
     testArea.value = "";
     theTimer.innerHTML = "00:00:00";
     testWrapper.style.borderColor = "grey";
+
+    hideAlert.classList.add("hideAlert");
+}
+
+//Checks for copying and pasting
+function noCheating(){
+    alert("You actually thought that was going to work? It's 2019 tho...");
+    hideAlert.classList.remove("hideAlert");
+
+    testWrapper.style.borderColor = "#E95D0F";
+
+    clearInterval(interval);
+    interval  = null;
+    timer = [0,0,0,0];
+    timerRunning = false;
+
+    testArea.value = "";
+    theTimer.innerHTML = "00:00:00";
 }
 
 // Event listeners for keyboard input and the reset button:
 testArea.addEventListener("keypress", startTimer, false);
 testArea.addEventListener("keyup", spellCheck, false);
 resetButton.addEventListener("click", resetTimer, false);
+testArea.addEventListener("paste", noCheating, false);
