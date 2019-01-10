@@ -71,9 +71,8 @@ function resetTimer(){
     hideAlert.classList.add("hideAlert");
 }
 
-//Checks for copying and pasting
+//Expose alert message for copying and pasting and clears timer
 function noCheating(){
-    alert("You actually thought that was going to work? It's 2019 tho...");
     hideAlert.classList.remove("hideAlert");
 
     testWrapper.style.borderColor = "#E95D0F";
